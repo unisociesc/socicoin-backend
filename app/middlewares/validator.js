@@ -4,7 +4,7 @@ const TARGET_HASH = 1560;
 
 module.exports.validProof = (proof) => {
     let guessHash = hash(proof);
-    console.log("Hashing: ", guessHash);
+    // console.log("Hashing: ", guessHash);
     return guessHash == hash(TARGET_HASH);
 }
 

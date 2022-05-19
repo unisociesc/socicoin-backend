@@ -44,7 +44,8 @@ class BlockChain {
     addNewTransaction(sender, recipient, amount) {
         this
             .curr_transactions
-            .push({ sender, recipient, amount });
+            .push({ recipient, amount });
+            //.push({ sender, recipient, amount });
         // return this;
     }
 

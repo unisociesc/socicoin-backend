@@ -6,6 +6,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    voted:{
+        type: Boolean,
+        require: true,
+        default: false,
+    },
     email:{
         type: String,
         unique: true,
@@ -28,6 +33,9 @@ const UserSchema = new mongoose.Schema({
     createdAt:{
         type: Date,
         default: Date.now,
+    },
+    votedAt:{
+        type: Date
     }
 });
 
