@@ -18,8 +18,17 @@ router.get('/', async (req, res) => {
     res.send({user: req.userId}); 
 });
 
-router.get('/:candidateId', async (req, res) => {
-    res.send({user: req.userId}); 
+router.get('/:code', async (req, res) => {
+    const {code} = req.params.code;
+
+    try{
+        const candidate = await Candidate.findOne({code});
+        console.log(candidate)
+        return res.send({candidate});
+    
+    } catch(err){
+        return res.status(400).send({error:'Error loading candidate'});
+    }
 });
 
 router.post('/', async (req, res) => {
